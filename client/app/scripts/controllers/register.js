@@ -21,7 +21,7 @@ angular.module('studyPortalApp')
         RegService.register(credentials).then(function(user) {
             $rootScope.$broadcast(REG_EVENTS.registerSuccess);
             $scope.setCurrentUser(null);
-            $location.path('/home');
+            $location.path('/dashboard');
             userService.user.isLogged = false;
             $cookieStore.put('loggedin', null);
         }, function() {
