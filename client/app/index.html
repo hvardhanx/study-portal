@@ -43,6 +43,7 @@
             <ul class="nav navbar-nav">
               <li ng-class="{ active: isActive('/')}"><a href="/">Home</a></li>
               <li><a ng-if="currentUser" ng-class="{ active: isActive('/dashboard')}" ng-href="/dashboard">Dashboard</a></li>
+              <li><a ng-if="currentUser" ng-class="{ active: isActive('/courses')}" ng-href="/dashboard/course">Courses</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a ng-if="!currentUser" ng-class="{ active: isActive('/login')}" ng-href="/login">Login</a></li>
@@ -89,6 +90,8 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angularUtils-disqus/dirDisqus.js"></script>
+    <script src="bower_components/angular-disqus/angular-disqus.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

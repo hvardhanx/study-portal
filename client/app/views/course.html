@@ -1,11 +1,12 @@
 <div class="panel panel-default">
-  <h3 style="text-align: center">{{Course.name}}</h3>
+  <h3 style="text-align: center">{{course.name}}</h3>
   <div class="table-responsive">
     <table class="table table-hover">
       <thead>
         <tr>
           <th> Material </th>
           <th> Suggestions </th>
+          <th> Download </th>
         </tr>
       </thead>
       <tbody>
@@ -13,10 +14,18 @@
           <span ng-href="#/dashboard/course/{{course.id}}">
             <td>{{material.name}}</td>
             <td>{{material.suggestions}}</td>
+            <td><span class="glyphicon glyphicon-download-alt"></span></td>
           </span>
         </tr>
       </tbody>
     </table>
-    <!-- Comments Plugin -->
   </div>
 </div>
+<div class="pull-right">
+  <span>Upload Files</span>
+  <button class="btn btn-default">
+    <span class="glyphicon glyphicon-cloud-upload"></span>
+  </button>
+</div>
+<dir-disqus config="disqusConfig"></dir-disqus>
+<div disqus="id"></div>

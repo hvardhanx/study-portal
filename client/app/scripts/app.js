@@ -9,7 +9,16 @@
  * Main module of the application.
  */
 angular
-  .module('studyPortalApp', ['ngRoute', 'ui.router', 'ngCookies'])
+  .module('studyPortalApp', [
+          'ngRoute',
+          'ui.router',
+          'ngCookies',
+          'angularUtils.directives.dirDisqus',
+          'ngDisqus'
+        ])
+  .config(function($disqusProvider){
+      $disqusProvider.setShortname('rishabhstr');
+   })
   .factory('storage', function() {
         return {};
     })

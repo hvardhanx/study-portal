@@ -9,6 +9,12 @@
  */
 angular.module('studyPortalApp')
   .controller('CourseCtrl', ['$scope', function($scope) {
+    $scope.disqusConfig = {
+      disqus_shortname: 'rishabhstr',
+      disqus_identifier: '',
+      disqus_url: ''
+    };
+    $scope.course = { name: 'Data Structures and Algorithms' };
     $scope.materials = [{
               id: 1,
               name: 'Cormen',
