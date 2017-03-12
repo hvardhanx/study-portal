@@ -37,7 +37,7 @@ angular.module('studyPortalApp')
       userService.user.isLogged = true;
       $cookieStore.put('loggedin', true);
       safeApply($scope);
-      $location.path('/profile');
+      $location.path('/dashboard');
     }, function() {
       $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
       $cookieStore.put('loggedin', null);
