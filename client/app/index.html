@@ -42,7 +42,7 @@
 
             <ul class="nav navbar-nav">
               <li ng-class="{ active: isActive('/')}"><a href="/">Home</a></li>
-              <li><a ng-if="currentUser" ng-class="{ active: isActive('/dashboard')} href="/dashboard">Dashboard</a></li>
+              <li><a ng-if="currentUser" ng-class="{ active: isActive('/dashboard')}" ng-href="/dashboard">Dashboard</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a ng-if="!currentUser" ng-class="{ active: isActive('/login')}" ng-href="/login">Login</a></li>
