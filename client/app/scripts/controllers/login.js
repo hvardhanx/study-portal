@@ -125,12 +125,12 @@ angular.module('studyPortalApp')
 
   // restricting route access
   $scope.user = userService.user;
-  $scope.$on('$routeChangeStart', function (e, next, current) {
+  $scope.$on('$routeChangeStart', function (e, next) {
      if (next.access !== undefined && !next.access.allowAnonymous && !userService.user.isLogged) {
                 $location.path('/login');
             }
   });
-  $rootScope.$on('$locationChangeStart', function (event, next, current) {
+  $rootScope.$on('$locationChangeStart', function (event, next) {
     for (var i in window.routes) {
       if (next.indexOf(i) !== -1) {
        if (!window.routes[i].access.allowAnonymous && !userService.user.isLogged) {
