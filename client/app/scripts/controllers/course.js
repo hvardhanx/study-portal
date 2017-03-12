@@ -8,14 +8,17 @@
  * Controller of the studyPortalApp
  */
 angular.module('studyPortalApp')
-  .controller('CourseCtrl', ['$http', function($http) {
-  	var req = $http.get('/api/users');
-  	var scope = this;
-  	req.then(function (res) {
-      scope.awesomeUsers = res.data.users;
-    });
-    req.catch(function (err) {
-      console.log(err);
-    });
+  .controller('CourseCtrl', ['$scope', function($scope) {
+    $scope.materials = [{
+              name: 'Cormen',
+              suggestions: 'Great in-depth resource with mathematical proofs'
+          }, {
+              name: 'Dasgupta Vazirani',
+              suggestions: 'C++ implementations'
+          }, {
+              name: 'Robert Sedgewick',
+              suggestions: 'Java algorithms'
+          }
+        ];
   }]);
 

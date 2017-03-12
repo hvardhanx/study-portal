@@ -8,14 +8,23 @@
  * Controller of the studyPortalApp
  */
 angular.module('studyPortalApp')
-  .controller('DashboardCtrl', ['$http', function($http) {
-  	var req = $http.get('/api/users');
-  	var scope = this;
-  	req.then(function (res) {
-      scope.awesomeUsers = res.data.users;
-    });
-    req.catch(function (err) {
-      console.log(err);
-    });
+  .controller('DashboardCtrl', ['$scope', function($scope) {
+    $scope.courses = [{
+              name: 'Data Communication',
+              type: 'Theory',
+              credits: 4
+          }, {
+              name: 'Operating Systems',
+              type: 'Theory',
+              credits: 3
+          }, {
+              name: 'Database Management Systems',
+              type: 'Theory',
+              credits: 4
+          }, {
+              name: 'Design and Analysis of algorithms',
+              type: 'Practical',
+              credits: 2
+          }
+        ];
   }]);
-
