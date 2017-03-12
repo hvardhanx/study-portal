@@ -8,18 +8,8 @@
  * Controller of the studyPortalApp
  */
 angular.module('studyPortalApp')
-  .controller('MainCtrl', ['$http', function($http) {
-  	var req = $http.get('/api/users');
-  	var scope = this;
-  	req.then(function (res) {
-      scope.awesomeUsers = res.data.users;
-    });
-    req.catch(function (err) {
-      console.log(err);
-    });
-    scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', ['$http', '$scope', '$location', function($http, $scope, $location) {
+    $scope.isActive = function(viewLocation) {
+      return viewLocation === $location.path();
+    };
   }]);
