@@ -37,7 +37,7 @@ angular.module('studyPortalApp')
       userService.user.isLogged = true;
       $cookieStore.put('loggedin', true);
       safeApply($scope);
-      $location.path('/dashboard');
+      $location.path('#/dashboard');
     }, function() {
       $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
       $cookieStore.put('loggedin', null);
@@ -158,7 +158,7 @@ angular.module('studyPortalApp')
 //Restricting route access
 .config(function($stateProvider, USER_ROLES) {
   $stateProvider.state('dashboard', {
-    url: '/dashboard',
+    url: '#/dashboard',
     templateUrl: 'views/dashboard.html',
     data: {
       authorizedRoles: [USER_ROLES.admin, USER_ROLES.editor]

@@ -10,7 +10,7 @@
       </thead>
       <tbody>
         <tr ng-repeat="course in courses">
-          <span ng-href="#/dashboard/course/{{course.id}}">
+          <span ng-href="/dashboard/{{course.name}}/{{course.id}}">
             <td>{{course.name}}</td>
             <td>{{course.type}}</td>
             <td>{{course.credits}}</td>
