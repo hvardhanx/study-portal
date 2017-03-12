@@ -8,20 +8,27 @@
  * Controller of the studyPortalApp
  */
 angular.module('studyPortalApp')
-  .controller('DashboardCtrl', ['$scope', function($scope) {
+  .controller('DashboardCtrl', ['$scope', '$location', function($scope, $location) {
+    $scope.goToLink = function(course) {
+      $location.path('#/dashboard/course/' + course.id);
+    };
     $scope.courses = [{
+              id: 1,
               name: 'Data Communication',
               type: 'Theory',
               credits: 4
           }, {
+              id: 1,
               name: 'Operating Systems',
               type: 'Theory',
               credits: 3
           }, {
+              id: 1,
               name: 'Database Management Systems',
               type: 'Theory',
               credits: 4
           }, {
+              id: 1,
               name: 'Design and Analysis of algorithms',
               type: 'Practical',
               credits: 2

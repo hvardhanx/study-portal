@@ -3,18 +3,16 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th style="text-align: center">Course</th>
-          <th style="text-align: center">Type</th>
-          <th style="text-align: center">Credits</th>
+          <th>Course</th>
+          <th>Type</th>
+          <th>Credits</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="course in courses">
-          <span ng-href="/dashboard/{{course.name}}/{{course.id}}">
-            <td>{{course.name}}</td>
-            <td>{{course.type}}</td>
-            <td>{{course.credits}}</td>
-          </span>
+        <tr ng-click="goToLink(course)" ng-repeat="course in courses">
+          <td>{{course.name}}</td>
+          <td>{{course.type}}</td>
+          <td>{{course.credits}}</td>
         </tr>
       </tbody>
     </table>
