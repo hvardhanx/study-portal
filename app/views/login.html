@@ -1,0 +1,16 @@
+<body>
+  <div class="jumbotron">
+    <h1>Sign in!</h1>
+    <form name="loginForm" method="post" ng-submit="login(credentials)" novalidate>
+      <ul>
+        <input type="text" ng-model='credentials.username' name="username" placeholder="Username" class="form-control" autofocus="on">
+        <label>&nbsp; </label>
+        <input type="password" ng-model='credentials.password' name="password" placeholder="Password" class="form-control" autofocus="on">
+      </ul>
+      <label>&nbsp; </label>
+      <button class="btn btn-success btn-block" type="submit">Sign in</button>
+    </form>
+  </div>
+  <h4 align="center">Not a member? <a href="#/signup">Sign up now</a><span class="fontawesome-arrow-right"></span></h4>
+</body>
+

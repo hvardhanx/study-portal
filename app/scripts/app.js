@@ -9,4 +9,31 @@
  * Main module of the application.
  */
 angular
-  .module('studyPortalApp', []);
+  .module('studyPortalApp', ['ngRoute'])
+  .config(function($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: 'views/main.html',
+                controller: 'MainCtrl',
+            })
+            .when('/login', {
+                templateUrl: 'views/login.html',
+                controller: 'MainCtrl',
+            })
+            .when('/register', {
+                templateUrl: 'views/register.html',
+                controller: 'MainCtrl',
+            })
+            .when('/dashboard', {
+                templateUrl: 'views/dashboard.html',
+                controller: 'MainCtrl',
+            })
+            .when('/dashboard/course', {
+                templateUrl: 'views/course.html',
+                controller: 'MainCtrl',
+            })
+
+        .otherwise({
+            redirectTo: '/'
+        });
+  });

@@ -41,10 +41,8 @@
 
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/">About</a></li>
-              <li><a ng-href="#/">Login</a></li>
-              <li><a ng-href="#/">Register</a></li>
-              <!-- <li><a ng-href="#/">Contact</a></li> -->
+              <li><a ng-href="#/login">Login</a></li>
+              <li><a ng-href="#/register">Register</a></li>
             </ul>
           </div>
         </div>
@@ -52,7 +50,7 @@
     </div>
 
     <div class="container">
-    <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+        <div ng-view=""></div>
     </div>
     &nbsp;
     <div class="footer">
@@ -78,6 +76,7 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

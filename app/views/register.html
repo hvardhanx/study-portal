@@ -1,0 +1,24 @@
+<body>
+  <div class="jumbotron">
+    <form name="registerForm" method="post" ng-submit="register(credentials)">
+      <h2>Sign Up</h2>
+      <fieldset>
+        &nbsp;
+        <input type="text" id="username" name="username" ng-model="credentials.username" placeholder="Username" class="form-control" autofocus="on">
+        &nbsp;
+        <input type="text" id="fullName" name="fullName" ng-model="credentials.fullName" placeholder="Full Name" class="form-control" autofocus="on">
+        &nbsp;
+        <input type="text" id="rollNo" name="rollNo" ng-model="credentials.rollNo" placeholder="Roll Number" class="form-control" autofocus="on">
+        &nbsp;
+        <input type="email" id="mail" name="email" ng-model="credentials.email" placeholder="Email ID" class="form-control" autofocus="on">
+        &nbsp;
+        <input type="text" id="Branch" name="branch" ng-model="credentials.branch" placeholder="Branch" class="form-control" autofocus="on">
+        &nbsp;
+        <input type="password" id="password" name="password" ng-model="credentials.password" placeholder="Password" class="form-control" autofocus="on">
+      </fieldset>
+      &nbsp;
+      <button class="btn btn-primary btn-block" type="submit">Sign Up</button>
+    </form>
+  </div>
+  <h4 align="center">Already a member? <a href="#/login">Sign in now</a><span class="fontawesome-arrow-right"></span></h4>
+</body>

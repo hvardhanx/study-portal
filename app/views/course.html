@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+  <h3 style="text-align: center">{{Course.name}}</h3>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th style="text-align: center"> Material </th>
+          <th style="text-align: center"> Suggestions </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="material in materials">
+          <span ng-href="#/dashboard/course/{{course.id}}">
+            <td>{{material.name}}</td>
+            <td>{{material.suggestions}}</td>
+          </span>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Comments Plugin -->
+  </div>
+</div>

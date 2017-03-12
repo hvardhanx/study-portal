@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th style="text-align: center">Course</th>
+          <th style="text-align: center">Type</th>
+          <th style="text-align: center">Credits</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="course in courses">
+          <span ng-href="#/dashboard/course/{{course.id}}">
+            <td>{{course.name}}</td>
+            <td>{{course.type}}</td>
+            <td>{{course.credits}}</td>
+          </span>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
