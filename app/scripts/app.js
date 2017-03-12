@@ -10,6 +10,9 @@
  */
 angular
   .module('studyPortalApp', ['ngRoute'])
+  .config(['$locationProvider', function($locationProvider) {
+    $locationProvider.hashPrefix('');
+  }])
   .config(function($routeProvider) {
         $routeProvider
             .when('/', {
