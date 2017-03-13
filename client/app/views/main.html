@@ -16,7 +16,7 @@
       <div class="col-sm-8 col-sm-offset-2">
         <div>
           <div class="input-group stylish-input-group">
-            <input type="text" class="form-control"  placeholder="Search books, courses or anything" >
+            <input type="text" class="form-control search-text"  placeholder="Search books, courses or anything" onkeypress="handleKeyPress(event)">
             <span class="input-group-addon">
               <button type="submit">
                 <span class="glyphicon glyphicon-search"></span>
@@ -47,3 +47,13 @@
   <h4>Discuss</h4>
   <p> Discuss and plan your semester ahead of your time </p>
 </div>
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+      $('.search-text').keypress(function(e){
+        if(e.which == 13){    //Enter key pressed
+          window.location = "http://www.google.com/search?q=" + $('.search-text').val();
+        }
+      });
+  });
+</script>
