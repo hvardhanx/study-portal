@@ -10,7 +10,8 @@
 angular.module('studyPortalApp')
   .controller('DashboardCtrl', ['$scope', '$location', function($scope, $location) {
     $scope.goToLink = function(course) {
-      $location.path('#/dashboard/course/' + course.id);
+      console.log(course);
+      $location.path('/dashboard/course');
     };
     $scope.courses = [{
               id: 1,
