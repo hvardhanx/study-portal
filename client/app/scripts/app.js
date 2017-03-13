@@ -14,7 +14,8 @@ angular
           'ui.router',
           'ngCookies',
           'angularUtils.directives.dirDisqus',
-          'ngDisqus'
+          'ngDisqus',
+          'ngFileUpload'
         ])
   .config(function($disqusProvider){
       $disqusProvider.setShortname('rishabhstr');
