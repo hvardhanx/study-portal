@@ -14,6 +14,7 @@ var flash = require('connect-flash');
 var express = require('express'); // call express
 var bodyParser = require('body-parser'); // call body parser
 var bCrypt = require('bcrypt-nodejs'); // call bcrypt
+var multer = require('multer');
 
 var app = express(); // define our app using express
 var User = require('./models/user');
@@ -152,11 +153,10 @@ router.use(function(req, res, next) {
   console.log('Something is happening.');
   res.header("Access-Control-Allow-Origin", "*");
   res.header('Access-Control-Allow-Methods', 'OPTIONS,GET,POST,PUT,DELETE');
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   if ('OPTIONS' == req.method) {
     return res.sendStatus(200);
   }
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next(); // make sure we go to the next routes and don't stop here
 });
 
@@ -167,6 +167,19 @@ var isAuthenticated = function(req, res, next) {
     return next();
   res.redirect('/');
 }
+
+var storage = multer.diskStorage({ //multers disk storage settings
+    destination: function (req, file, cb) {
+        cb(null, './uploads/')
+    },
+    filename: function (req, file, cb) {
+        var datetimestamp = Date.now();
+        cb(null, file.fieldname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length -1])
+    }
+});
+var upload = multer({ //multer settings
+                storage: storage
+            }).single('file');
 
 // more routes for our API will happen here
 
@@ -179,6 +192,18 @@ router.get('/', function(req, res) {
   res.render('index', {
     message: req.flash('message')
   });
+});
+
+/** API path that will upload the files */
+router.post('/upload', function(req, res) {
+    console.log('File Uploaded');
+    upload(req,res,function(err){
+        if(err){
+              res.json({error_code:1,err_desc:err});
+             return;
+        }
+          res.json({error_code:0,err_desc:null});
+    });
 });
 
 /* Handle Login POST */

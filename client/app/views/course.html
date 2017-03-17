@@ -21,13 +21,15 @@
     </table>
   </div>
 </div>
-<div class="pull-right">
-  <span>Upload Files</span>
-  <button class="btn btn-default">
-    <span class="glyphicon glyphicon-cloud-upload"></span>
-  </button>
-</div>
 
+<form ng-controller="UploadCtrl" name="form">
+  <div class="button pull-right" ngf-select="upload($files)" ngf-accept="application/pdf">
+    <span>Upload Files</span>
+    <button class="btn btn-default">
+      <span class="glyphicon glyphicon-cloud-upload"></span>
+    </button>
+  </div>
+</form>
 
 <div id="disqus_thread"></div>
 <script>
