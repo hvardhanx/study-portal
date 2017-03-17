@@ -285,7 +285,7 @@ router.get('/dashboard', isAuthenticated, function(req, res) {
   });
 });
 
-var sem = new SemUser([
+var semArr = [
         {
             id: 1,
             name: 'Data Communication',
@@ -322,20 +322,23 @@ var sem = new SemUser([
             branch: 'hey',
             semester: 'hey'
         }
-      ]);
+      ];
 
-// save the semester
-sem.save(function(err) {
-  if (err) {
-    console.log('Error in Saving user: ' + err);
-    throw err;
-  }
-  console.log('Semester data saved!');
-});
+for(var i = 0; i < semArr.length; i++) {
+  // console.log(semArr[i]);
+  var sem = new SemUser(semArr[i]);
+  sem.save(function(err) {
+    if(err) {
+      console.log("Error!");
+      throw err;
+    }
+    console.log('Data saved!');
+  });
+}
 
 /* GET Courses */
 router.get('/courses', isAuthenticated, function(req, res) {
-  console.log(sem.find({}));
+  console.log("Hello");
 });
 
 // REGISTER OUR ROUTES -------------------------------
