@@ -8,7 +8,7 @@
  * Controller of the studyPortalApp
  */
 angular.module('studyPortalApp')
-  .controller('DashboardCtrl', ['$scope', '$location', '$cookieStore', function($scope, $location, $cookieStore) {
+  .controller('DashboardCtrl', ['$scope', '$location', '$cookieStore', '$http', function($scope, $location, $cookieStore, $http) {
     $scope.goToLink = function(course) {
       console.log(course);
       $location.path('/dashboard/course');
@@ -24,9 +24,10 @@ angular.module('studyPortalApp')
     $http({method : 'GET',url : 'http://localhost:8080/api/courses'})
       .success(function(data, status) {
           $scope.courses = data;
+          console.log(status);
       })
       .error(function(data, status) {
-          alert("Error");
+          console.log("Error: "+ data + status);
       });
 
   }]);
