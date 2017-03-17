@@ -14,8 +14,9 @@ angular.module('studyPortalApp')
       $location.path('/dashboard/course');
     };
 
-    var semester = $cookieStore.get("semester");
-    var branch = $cookieStore.get("branch");
+    $scope.getCookie = function(param) {
+      return $cookieStore.get(param);
+    };
 
     $scope.courses = [{
               id: 1,

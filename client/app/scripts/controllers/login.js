@@ -38,6 +38,7 @@ angular.module('studyPortalApp')
       $cookieStore.put('loggedin', true);
       safeApply($scope);
       $location.path('#/dashboard');
+      console.log($scope);
     }, function() {
       $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
       $cookieStore.put('loggedin', null);
@@ -80,6 +81,7 @@ angular.module('studyPortalApp')
     .then(function(res) {
       Session.create(res.data.id, res.data.user.id,
                      res.data.user.email, res.data.user.role);
+      console.log(res.data.user);
       $cookieStore.put('sessionId', res.data.id);
       $cookieStore.put('branch'  ,res.data.user.branch);
       $cookieStore.put('semester' ,res.data.user.semester);
