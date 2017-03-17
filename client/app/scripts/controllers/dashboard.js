@@ -15,6 +15,7 @@ angular.module('studyPortalApp')
     };
 
     $scope.getCookie = function(param) {
+      console.log($cookieStore.get(param));
       return $cookieStore.get(param);
     };
 
@@ -46,6 +47,13 @@ angular.module('studyPortalApp')
               credits: 2,
               branch: 'CSE',
               semester: '5'
+          }, {
+              id: 4,
+              name: 'Design and Analysis of algorithms',
+              type: 'Practical',
+              credits: 2,
+              branch: 'hey',
+              semester: 'hey'
           }
         ];
   }]);
