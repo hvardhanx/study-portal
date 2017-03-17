@@ -9,6 +9,7 @@ var userSchema = new Schema({
   password: String,
   email: String,
   branch: String,
+  semester: String,
 });
 
 module.exports = mongoose.model('User', userSchema);

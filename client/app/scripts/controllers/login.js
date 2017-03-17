@@ -81,6 +81,8 @@ angular.module('studyPortalApp')
       Session.create(res.data.id, res.data.user.id,
                      res.data.user.email, res.data.user.role);
       $cookieStore.put('sessionId', res.data.id);
+      $cookieStore.put('branch'  ,res.data.user.branch);
+      $cookieStore.put('semester' ,res.data.user.semester);
        return res.data.user;
     });
   };

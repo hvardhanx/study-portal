@@ -124,6 +124,9 @@ function(req, username, password, done) {
         newUser.password = createHash(password);
         newUser.email = req.param('email');
         newUser.contact = req.param('contact');
+        newUser.branch = req.param('branch');
+        newUser.semester = req.param('semester');
+        console.log(req.param);
 
         // save the user
         newUser.save(function(err) {
@@ -227,8 +230,9 @@ router.post('/login', function(req, res, next) {
         contact: user.contact,
         id: user.username,
         email: user.email,
+        branch: user.branch,
+        semester: user.semester,
         role: "guest",
-        mailingLists: user.mailingLists,
       },
       success: true,
       message: 'login succeeded'
