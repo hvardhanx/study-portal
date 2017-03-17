@@ -285,11 +285,57 @@ router.get('/dashboard', isAuthenticated, function(req, res) {
   });
 });
 
+var sem = new SemUser([
+        {
+            id: 1,
+            name: 'Data Communication',
+            type: 'Theory',
+            credits: 4,
+            branch: 'CSE',
+            semester: '5'
+        }, {
+            id: 2,
+            name: 'Operating Systems',
+            type: 'Theory',
+            credits: 3,
+            branch: 'CSE',
+            semester: '4'
+        }, {
+            id: 3,
+            name: 'Database Management Systems',
+            type: 'Theory',
+            credits: 4,
+            branch: 'CSE',
+            semester: '4'
+        }, {
+            id: 4,
+            name: 'Design and Analysis of algorithms',
+            type: 'Practical',
+            credits: 2,
+            branch: 'CSE',
+            semester: '5'
+        }, {
+            id: 4,
+            name: 'Design and Analysis of algorithms',
+            type: 'Practical',
+            credits: 2,
+            branch: 'hey',
+            semester: 'hey'
+        }
+      ]);
+
+// save the semester
+sem.save(function(err) {
+  if (err) {
+    console.log('Error in Saving user: ' + err);
+    throw err;
+  }
+  console.log('Semester data saved!');
+});
+
 /* GET Courses */
 router.get('/courses', isAuthenticated, function(req, res) {
-  res.render('courses', {
-    user: req.user
-  });
+  console.log(sem.find({}));
 });
 
 // REGISTER OUR ROUTES -------------------------------
