@@ -3,8 +3,9 @@ var Schema = mongoose.Schema;
 
 
 var semSchema = new Schema({
-	material: String,
-	suggestions: String,
+	name: String,
+	type: String,
+	credits: Number,
 });
 
 module.exports = mongoose.model('Semester', semSchema);
