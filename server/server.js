@@ -18,6 +18,7 @@ var multer = require('multer');
 
 var app = express(); // define our app using express
 var User = require('./models/user');
+var SemUser = require('./models/semester');
 
 // Validates password using bCrypt hash
 var isValidPassword = function(user, password) {
@@ -280,6 +281,13 @@ router.get('/signout', function(req, res) {
 /* GET Home Page */
 router.get('/dashboard', isAuthenticated, function(req, res) {
   res.render('dashboard', {
+    user: req.user
+  });
+});
+
+/* GET Courses */
+router.get('/courses', isAuthenticated, function(req, res) {
+  res.render('courses', {
     user: req.user
   });
 });
