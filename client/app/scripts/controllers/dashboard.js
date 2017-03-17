@@ -22,22 +22,30 @@ angular.module('studyPortalApp')
               id: 1,
               name: 'Data Communication',
               type: 'Theory',
-              credits: 4
+              credits: 4,
+              branch: 'CSE',
+              semester: '5'
           }, {
-              id: 1,
+              id: 2,
               name: 'Operating Systems',
               type: 'Theory',
-              credits: 3
+              credits: 3,
+              branch: 'CSE',
+              semester: '4'
           }, {
-              id: 1,
+              id: 3,
               name: 'Database Management Systems',
               type: 'Theory',
-              credits: 4
+              credits: 4,
+              branch: 'CSE',
+              semester: '4'
           }, {
-              id: 1,
+              id: 4,
               name: 'Design and Analysis of algorithms',
               type: 'Practical',
-              credits: 2
+              credits: 2,
+              branch: 'CSE',
+              semester: '5'
           }
         ];
   }]);
