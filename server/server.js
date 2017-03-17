@@ -288,6 +288,7 @@ router.get('/dashboard', isAuthenticated, function(req, res) {
 /* GET Courses */
 router.get('/courses', function(req, res, next) {
   console.log('hello');
+
   var courses = [{
              id: 1,
              name: 'Data Communication',
@@ -322,7 +323,7 @@ router.get('/courses', function(req, res, next) {
              type: 'Practical',
              credits: 2,
              branch: 'hey',
-             semester: 'hey'
+             semester: '6'
          }
        ];
   return res.send(courses);

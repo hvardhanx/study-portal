@@ -6,6 +6,8 @@ var semSchema = new Schema({
 	name: String,
 	type: String,
 	credits: Number,
+	branch: String,
+	semester: String,
 });
 
 module.exports = mongoose.model('Semester', semSchema);
