@@ -64,6 +64,10 @@ angular
                 templateUrl: 'views/course.html',
                 controller: 'CourseCtrl',
             })
+            .when('/dashboard/add', {
+                templateUrl: 'views/addCourse.html',
+                controller: 'AddCourseCtrl',
+            })
 
         .otherwise({
             redirectTo: '/'

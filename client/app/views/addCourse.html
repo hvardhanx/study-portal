@@ -1,0 +1,22 @@
+<body>
+  <div class="jumbotron">
+    <form name="addCourseForm" method="post" ng-submit="add(course)">
+      <h2>Add New Course</h2>
+      <fieldset>
+        &nbsp;
+        <input type="text" id="name" name="name" ng-model="course.name" placeholder="Name" class="form-control" autofocus="on">
+        &nbsp;
+        <input type="text" id="type" name="type" ng-model="course.type" placeholder="Type" class="form-control" autofocus="on">
+        &nbsp;
+        <input type="text" id="credits" name="credits" ng-model="course.credits" placeholder="Credits" class="form-control" autofocus="on">
+        &nbsp;
+        <input type="text" id="branch" name="branch" ng-model="course.branch" placeholder="Branch" class="form-control" autofocus="on">
+        &nbsp;
+        <input type="text" id="semester" name="semester" ng-model="course.semester" placeholder="Semester" class="form-control" autofocus="on">
+        &nbsp;
+      </fieldset>
+      &nbsp;
+      <button class="btn btn-success btn-block" type="submit">Add</button>
+    </form>
+  </div>
+</body>

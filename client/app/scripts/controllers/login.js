@@ -168,6 +168,13 @@ angular.module('studyPortalApp')
       authorizedRoles: [USER_ROLES.admin, USER_ROLES.editor]
     }
   });
+  $stateProvider.state('dashboard/add', {
+    url: '#/dashboard/add',
+    templateUrl: 'views/addCourse.html',
+    data: {
+      authorizedRoles: [USER_ROLES.admin, USER_ROLES.editor]
+    }
+  });
 })
 .run(function($rootScope, AUTH_EVENTS, AuthService) {
   $rootScope.$on('$stateChangeStart', function(event, next) {

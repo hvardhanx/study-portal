@@ -14,6 +14,11 @@ angular.module('studyPortalApp')
       $location.path('/dashboard/course');
     };
 
+    $scope.addCourse = function() {
+      console.log('lol  ');
+      $location.path('/dashboard/add');
+    };
+
     $scope.getCookie = function(param) {
       // console.log($cookieStore.get(param));
       return $cookieStore.get(param);

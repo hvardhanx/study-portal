@@ -327,6 +327,13 @@ router.get('/courses', function(req, res, next) {
   return res.send(courses);
 });
 
+/* GET Courses */
+router.post('/courses/add', function(req, res, next) {
+  // console.log(req.body);
+  courses.push(req.body);
+  return res;
+});
+
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', router);
