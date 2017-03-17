@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-click="goToLink(course)" ng-repeat="course in courses">
+        <tr ng-click="goToLink(course)" ng-repeat="course in courses | filter: {branch: getCookie(branch), semester: getCookie(semester)}">
           <td>{{course.name}}</td>
           <td>{{course.type}}</td>
           <td>{{course.credits}}</td>
